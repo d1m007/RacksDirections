@@ -15,7 +15,7 @@ This plugin is intended to reverse slots numbering direction in racks views, if 
 
 ![license](https://img.shields.io/github/license/glpi-project/glpi.svg)
 
-It is distributed under the GNU GENERAL PUBLIC LICENSE Version 3 - please consult the file called [LICENSE](https://raw.githubusercontent.com/glpi-project/glpi/main/LICENSE) for more details.
+It is distributed under the GNU GENERAL PUBLIC LICENSE Version 3 - please consult the file called [LICENSE](https://raw.githubusercontent.com/dim00z/racksdirections/main/LICENSE) for more details.
 
 ## Documentation
 
