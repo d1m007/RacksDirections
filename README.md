@@ -13,7 +13,7 @@ This plugin is intended to reverse slots numbering direction in racks views, if 
 
 ## License
 
-![license](https://raw.githubusercontent.com/dim00z/racksdirections/main/docs/GPLv3.0.svg)
+![license](./docs/GPLv3.0.svg)
 
 It is distributed under the GNU GENERAL PUBLIC LICENSE Version 3 - please consult the file called [LICENSE](https://raw.githubusercontent.com/dim00z/racksdirections/main/LICENSE) for more details.
 
