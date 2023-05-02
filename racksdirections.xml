@@ -1,0 +1,51 @@
+<root>
+   <name>RacksDirections</name>
+   <key>racksdirections</key>
+   <state>stable</state>
+   <logo></logo>
+   <description>
+      <short>
+         <en>The RacksDirections plugin allows you to reverse slots numbering in racks views.</en>
+         <fr>Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplacements dans les vues des baies.</fr>
+      </short>
+      <long>
+         <en>
+The RacksDirections plugin allows you to reverse slots numbering direction in racks views: from top to bottom or from bottom to top.
+         </en>
+         <fr>
+Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplacements dans les vues des baies: du bas vers le haut ou du haut vers le bas.
+         </fr>
+      </long>
+   </description>
+   <homepage>https://github.com/dim00z/racksdirections</homepage>
+   <download>https://github.com/dim00z/racksdirections/raw/main/files/racksdirections.zip</download>
+   <issues>https://github.com/dim00z/racksdirections/issues</issues>
+   <readme>https://raw.githubusercontent.com/dim00z/racksdirections/main/README.md</readme>
+   <authors>
+      <author>Dimitri Mestdagh</author>
+   </authors>
+   <versions>
+      <version>
+         <num>0.0.1</num>
+         <compatibility>~10.0.0</compatibility>
+         <download_url>https://github.com/dim00z/racksdirections/raw/main/files/racksdirections.zip</download_url>
+      </version>
+   </versions>
+   <langs>
+      <lang>en_GB</lang>
+      <lang>fr_FR</lang>
+   </langs>
+   <license>GPLv3.0</license>
+   <tags>
+      <en>
+         <tag>Racks Directions</tag>
+      </en>
+      <fr>
+         <tag>Sens des baies</tag>
+      </fr>
+   </tags>
+   <screenshots>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/docs/RacksDirections_tab.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/docs/RacksDirections_reversed_rack_view.png</screenshot>
+   </screenshots>
+</root>

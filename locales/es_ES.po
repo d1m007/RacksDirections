@@ -1,0 +1,96 @@
+# es_ES translations for the RacksDirections plugin.
+# Copyright (C) 2023 Dimitri Mestdagh
+# This file is distributed under the same license as the RacksDirections plugin.
+# 
+# Translator:
+# Dimitri Mestdagh, 2023
+
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Plugin - RacksDirections\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-30 17:47+0000\n"
+"PO-Revision-Date: 2023-05-02 21:24+0000\n"
+"Last-Translator: Dimitri Mestdagh, 2023\n"
+"Language-Team: French (France)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: front/saverackdirection.form.php:36
+msgid "You don't have permission to perform this action."
+msgstr "No tiene permisos para realizar esta acción."
+
+#: front/saverackdirection.form.php:45
+msgid "Please specify the slots numbering direction for the rack."
+msgstr "Especifique el sentido de numeración de las ranuras del bastidor."
+
+#: front/config.form.php:50
+msgid "Plugin Racks Directions - Profiles configuration"
+msgstr "Plugin Direcciones de los bastidores - Configuración de perfiles"
+
+#: front/config.form.php:51
+msgid "Select which profile can access the plugin tab to change racks directions"
+msgstr "Seleccione qué perfil puede acceder a la pestaña de complementos para cambiar las direcciones de los bastidores"
+
+#: front/config.form.php:62
+msgid "No access"
+msgstr "Sin acceso"
+
+#: front/config.form.php:65
+msgid "Write"
+msgstr "Escritura"
+
+#: setup.php:102
+msgid "This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8"
+msgstr "Este plugin requiere GLPI >= 10.0.0 y GLPI < 10.0.8"
+
+#: setup.php:74
+msgid "Racks Directions"
+msgstr "Direcciones de los bastidores"
+
+#: inc/racksdirections.class.php:94
+msgid "Rack direction"
+msgstr "Dirección del bastidor"
+
+#: inc/racksdirections.class.php:111
+msgid "Change slots numbering direction in rack view"
+msgstr "Cambiar la dirección de numeración de las ranuras en la vista del bastidor"
+
+#: inc/racksdirections.class.php:119
+msgid "Direction to apply to this rack"
+msgstr "Dirección a aplicar a esta bastidor"
+
+#: inc/racksdirections.class.php:123
+msgid "Default"
+msgstr "Predeterminada"
+
+#: inc/racksdirections.class.php:126
+msgid "Reversed"
+msgstr "Invertida"
+
+#: inc/racksdirections.class.php:128
+msgid "Save"
+msgstr "Guardar"
+
+#: inc/racksdirections.class.php:132
+msgid "Information"
+msgstr "Información"
+
+#: inc/racksdirections.class.php:133
+msgid "Default numbering"
+msgstr "Numeración predeterminada"
+
+#: inc/racksdirections.class.php:133
+msgid "slots in this rack are numbered from bottom to top"
+msgstr "las ranuras de esta bastidor están numeradas de abajo a arriba"
+
+#: inc/racksdirections.class.php:134
+msgid "Reversed numbering"
+msgstr "Numeración invertida"
+
+#: inc/racksdirections.class.php:134
+msgid "slots in this rack are numbered from top to bottom"
+msgstr "las ranuras de esta bastidor están numeradas de arriba a abajo"
