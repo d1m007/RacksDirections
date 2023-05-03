@@ -39,7 +39,7 @@ class PluginRacksDirections extends CommonGLPI
 		// Table to store racks directions:
 		$DB = new DB;
 		$table = "glpi_plugin_racksdirections_racksdirections";
-		$query = "CREATE TABLE `glpi`.`".$table."` (`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
+		$query = "CREATE TABLE `".$table."` (`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
 			`rack_id` INT(10) UNSIGNED NOT NULL ,
 			`is_reversed` INT(1) NOT NULL DEFAULT '0' ,
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
@@ -47,7 +47,7 @@ class PluginRacksDirections extends CommonGLPI
 		
 		// Table to store profiles rights on plugin:
 		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "CREATE TABLE `glpi`.`".$table."` (`id` INT(10) UNSIGNED NOT NULL ,
+		$query = "CREATE TABLE `".$table."` (`id` INT(10) UNSIGNED NOT NULL ,
 			`profile_right` INT(1) UNSIGNED NOT NULL ,
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
 		$result = $DB->query($query) or die($DB->error());
@@ -65,13 +65,13 @@ class PluginRacksDirections extends CommonGLPI
 		// Drop table of racks directions:
 		$DB = new DB;
 		$table = "glpi_plugin_racksdirections_racksdirections";
-		$query = "DROP TABLE `glpi`.`".$table."`;";
+		$query = "DROP TABLE `".$table."`;";
 		$result = $DB->query($query) or die($DB->error());
 		
 		// Drop table of plugin profiles rights:
 		$DB = new DB;
 		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "DROP TABLE `glpi`.`".$table."`;";
+		$query = "DROP TABLE `".$table."`;";
 		$result = $DB->query($query) or die($DB->error());
 		
 		return;
