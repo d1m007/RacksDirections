@@ -6,12 +6,16 @@
    <description>
       <short>
          <en>The RacksDirections plugin allows you to reverse slots numbering in racks views.</en>
+         <es>El plugin RacksDirections le permite invertir la numeración de las ranuras en las vistas de los racks.</es>
          <fr>Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplacements dans les vues des baies.</fr>
       </short>
       <long>
          <en>
 The RacksDirections plugin allows you to reverse slots numbering direction in racks views: from top to bottom or from bottom to top.
          </en>
+         <es>
+El plugin RacksDirections le permite invertir la dirección de numeración de las ranuras en las vistas de los racks: de arriba a abajo o de abajo a arriba.
+         </es>
          <fr>
 Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplacements dans les vues des baies: du bas vers le haut ou du haut vers le bas.
          </fr>
@@ -26,13 +30,14 @@ Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplac
    </authors>
    <versions>
       <version>
-         <num>0.0.1</num>
+         <num>0.0.2</num>
          <compatibility>~10.0.0</compatibility>
          <download_url>https://github.com/dim00z/racksdirections/raw/main/files/racksdirections.zip</download_url>
       </version>
    </versions>
    <langs>
       <lang>en_GB</lang>
+      <lang>es_ES</lang>
       <lang>fr_FR</lang>
    </langs>
    <license>GPLv3.0</license>
@@ -40,6 +45,9 @@ Le plugin 'Sens des baies' permet de changer l'ordre de numérotation des emplac
       <en>
          <tag>Racks Directions</tag>
       </en>
+      <es>
+         <tag>Direcciones de los bastidores</tag>
+      </es>
       <fr>
          <tag>Sens des baies</tag>
       </fr>
