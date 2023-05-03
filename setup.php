@@ -30,7 +30,7 @@
 
 use Glpi\Plugin\Hooks;
 
-define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.1');
+define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.2');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
