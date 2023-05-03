@@ -2,7 +2,7 @@
    <name>RacksDirections</name>
    <key>racksdirections</key>
    <state>stable</state>
-   <logo></logo>
+   <logo>https://raw.githubusercontent.com/dim00z/racksdirections/main/racksdirections.png</logo>
    <description>
       <short>
          <en>The RacksDirections plugin allows you to reverse slots numbering in racks views.</en>
