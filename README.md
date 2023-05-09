@@ -41,6 +41,8 @@ The original glpi file '/src/Item_Rack.php' is restored at the end of the uninst
 To install the plugin, unzip the files in the following directory:
 'glpi/plugins/racksdirections/'
 then install/enable it from the Setup/plugin panel. You need to configure profile rights in order to display the additionnal tab in racks views.
+You also may need to allow your webserver to run the plugin, for instance: 
+'chown -R www-data:www-data racksdirections/'
 
 Or use git:
 
