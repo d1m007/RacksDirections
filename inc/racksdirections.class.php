@@ -36,19 +36,22 @@ class PluginRacksDirections extends CommonGLPI
      */
 	function createPluginDB(){
 		
-		// Table to store racks directions:
 		$DB = new DB;
+		
+		// Table to store racks directions:
 		$table = "glpi_plugin_racksdirections_racksdirections";
-		$query = "CREATE TABLE `".$table."` (`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
-			`rack_id` INT(10) UNSIGNED NOT NULL ,
-			`is_reversed` INT(1) NOT NULL DEFAULT '0' ,
+		$query = "CREATE TABLE `".$table."` (
+			`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+			`rack_id` INT(10) UNSIGNED NOT NULL,
+			`is_reversed` INT(1) NOT NULL DEFAULT '0',
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
 		$result = $DB->query($query) or die($DB->error());
 		
 		// Table to store profiles rights on plugin:
 		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "CREATE TABLE `".$table."` (`id` INT(10) UNSIGNED NOT NULL ,
-			`profile_right` INT(1) UNSIGNED NOT NULL ,
+		$query = "CREATE TABLE `".$table."` (
+			`id` INT(10) UNSIGNED NOT NULL,
+			`profile_right` INT(1) UNSIGNED NOT NULL,
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
 		$result = $DB->query($query) or die($DB->error());
 		
@@ -62,14 +65,14 @@ class PluginRacksDirections extends CommonGLPI
      */
 	 function dropPluginDB(){
 		
-		// Drop table of racks directions:
 		$DB = new DB;
+		
+		// Drop table of racks directions:
 		$table = "glpi_plugin_racksdirections_racksdirections";
 		$query = "DROP TABLE `".$table."`;";
 		$result = $DB->query($query) or die($DB->error());
 		
 		// Drop table of plugin profiles rights:
-		$DB = new DB;
 		$table = "glpi_plugin_racksdirections_profiles";
 		$query = "DROP TABLE `".$table."`;";
 		$result = $DB->query($query) or die($DB->error());
@@ -91,7 +94,7 @@ class PluginRacksDirections extends CommonGLPI
 				self::checkRackDirection($item->getID());
 				// Display plugin tab according to active user profile:
 				$profile_access = self::getPluginProfile($_SESSION['glpiactiveprofile']['id']);
-				if($profile_access == 1) return __('Rack direction', 'racksdirections');
+				if($profile_access == 1) return __('Rack direction', 'RacksDirections');
 				break;
 			default:
 		}
@@ -108,30 +111,30 @@ class PluginRacksDirections extends CommonGLPI
 		$out = "\n";
 		$out .= "	<div style=\"margin-top:10px\">\n		<table class=\"tab_cadre_fixe\">\n";
 		$out .= "		<tbody>\n";
-		$out .= "		<tr><th>" . __('Change slots numbering direction in rack view', 'racksdirections') . "</th></tr>\n";
+		$out .= "		<tr><th>" . __('Change slots numbering direction in rack view', 'RacksDirections') . "</th></tr>\n";
         $out .= "			<tr>\n";
         $out .= "				<td>\n";
-		$out .= "				<form action='../plugins/racksdirections/front/saverackdirection.php' method='post'>\n";
+		$out .= "				<form action='../plugins/RacksDirections/front/saverackdirection.php' method='post'>\n";
         $out .= "					" . Html::hidden('rack_id', array('value' => $item->getID()));
 		$out .= "\n";
         $out .= "					" . Html::hidden('_glpi_csrf_token', array('value' => Session::getNewCSRFToken()));
 		$out .= "\n";
-		$out .= "					<label for=\"rackdirection\">" . __('Direction to apply to this rack', 'racksdirections') . ":</label>\n";
+		$out .= "					<label for=\"rackdirection\">" . __('Direction to apply to this rack', 'RacksDirections') . ":</label>\n";
         $out .= "					<select name=\"rackdirection\" id=\"rackdirection\">\n";
 		$out .= "						<option value=\"0\"";
 		if(isset($_SESSION['glpi_js_toload']['rack']) && $_SESSION['glpi_js_toload']['rack'][0] == 'js/rack.js') $out .= (" selected");
-		$out .= ">" . __('Default', 'racksdirections') . "</option>\n";
+		$out .= ">" . __('Default', 'RacksDirections') . "</option>\n";
 		$out .= "						<option value=\"1\"";
 		if(isset($_SESSION['glpi_js_toload']['rack']) && $_SESSION['glpi_js_toload']['rack'][0] == 'js/rack.reverse.js') $out .= (" selected");
-		$out .= ">" . __('Reversed', 'racksdirections') . "</option>\n";
+		$out .= ">" . __('Reversed', 'RacksDirections') . "</option>\n";
 		$out .= "					</select>\n";
-		$out .= "					<input type=\"submit\" class=\"submit\" value=\"" . __('Save', 'racksdirections') . "\" name=\"save\"/>\n";
+		$out .= "					<input type=\"submit\" class=\"submit\" value=\"" . __('Save', 'RacksDirections') . "\" name=\"save\"/>\n";
         $out .= "				</form>\n";
         $out .= "				</td>\n";
         $out .= "			</tr>\n";
-		$out .= "			<tr><td style=\"padding-top:30px\">" . __('Information', 'racksdirections') . ":</td></tr>\n";
-		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Default numbering', 'racksdirections') . ":</b> " . __('slots in this rack are numbered from bottom to top', 'racksdirections') . "</td></tr>\n";
-		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Reversed numbering', 'racksdirections') . ":</b> " . __('slots in this rack are numbered from top to bottom', 'racksdirections') . "</td></tr>\n";
+		$out .= "			<tr><td style=\"padding-top:30px\">" . __('Information', 'RacksDirections') . ":</td></tr>\n";
+		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Default numbering', 'RacksDirections') . ":</b> " . __('slots in this rack are numbered from bottom to top', 'RacksDirections') . "</td></tr>\n";
+		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Reversed numbering', 'RacksDirections') . ":</b> " . __('slots in this rack are numbered from top to bottom', 'RacksDirections') . "</td></tr>\n";
         $out .= "		</tbody>\n";
 		$out .= "		</table>\n";
 		$out .= "	</div>\n";
