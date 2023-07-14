@@ -1,0 +1,59 @@
+<root>
+   <name>RacksDirections</name>
+   <key>RacksDirections</key>
+   <state>stable</state>
+   <logo>https://raw.githubusercontent.com/dim00z/racksdirections/main/RacksDirections.png</logo>
+   <description>
+      <short>
+         <en>The RacksDirections plugin allows you to reverse slots numbering in racks views.</en>
+         <es>El plugin RacksDirections le permite invertir la numeración de las ranuras en las vistas de los bastidores.</es>
+         <fr>Le plugin RacksDirections permet de changer l'ordre de numérotation des emplacements dans les vues des baies.</fr>
+      </short>
+      <long>
+         <en>
+The "Racks Directions" plugin allows you to reverse slots numbering direction in racks views: from top to bottom or from bottom to top.
+         </en>
+         <es>
+El plugin "Dirección del bastidor" le permite invertir la dirección de numeración de las ranuras en las vistas de los bastidores: de arriba a abajo o de abajo a arriba.
+         </es>
+         <fr>
+Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplacements dans les vues des baies: du bas vers le haut ou du haut vers le bas.
+         </fr>
+      </long>
+   </description>
+   <homepage>https://github.com/dim00z/racksdirections</homepage>
+   <download>https://github.com/dim00z/racksdirections/raw/main/misc/RacksDirections.zip</download>
+   <issues>https://github.com/dim00z/racksdirections/issues</issues>
+   <readme>https://raw.githubusercontent.com/dim00z/racksdirections/main/README.md</readme>
+   <authors>
+      <author>Dimitri Mestdagh</author>
+   </authors>
+   <versions>
+      <version>
+         <num>0.0.3</num>
+         <compatibility>~10.0</compatibility>
+         <download_url>https://github.com/dim00z/racksdirections/raw/main/misc/RacksDirections.zip</download_url>
+      </version>
+   </versions>
+   <langs>
+      <lang>en_GB</lang>
+      <lang>es_ES</lang>
+      <lang>fr_FR</lang>
+   </langs>
+   <license>GPLv3.0</license>
+   <tags>
+      <en>
+         <tag>Racks Directions</tag>
+      </en>
+      <es>
+         <tag>Dirección del bastidor</tag>
+      </es>
+      <fr>
+         <tag>Sens des baies</tag>
+      </fr>
+   </tags>
+   <screenshots>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/misc/RacksDirections_tab.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/misc/RacksDirections_reversed_rack_view.png</screenshot>
+   </screenshots>
+</root>
