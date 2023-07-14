@@ -1,6 +1,6 @@
 # GLPi RacksDirections Plugin
 
-Download the plugin here : https://github.com/dim00z/racksdirections/raw/main/files/racksdirections.zip
+Download the plugin here : https://github.com/dim00z/racksdirections/raw/main/misc/RacksDirections.zip
 
 ## Introduction
 
