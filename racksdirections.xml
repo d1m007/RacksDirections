@@ -30,7 +30,7 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
    </authors>
    <versions>
       <version>
-         <num>0.0.2</num>
+         <num>0.0.3</num>
          <compatibility>~10.0.0</compatibility>
          <download_url>https://github.com/dim00z/racksdirections/raw/main/files/racksdirections.zip</download_url>
       </version>
@@ -53,7 +53,7 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
       </fr>
    </tags>
    <screenshots>
-      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/docs/RacksDirections_tab.png</screenshot>
-      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/docs/RacksDirections_reversed_rack_view.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/misc/RacksDirections_tab.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/dim00z/racksdirections/main/misc/RacksDirections_reversed_rack_view.png</screenshot>
    </screenshots>
 </root>

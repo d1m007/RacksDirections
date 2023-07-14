@@ -30,13 +30,13 @@
 
 use Glpi\Plugin\Hooks;
 
-define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.2');
+define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.3');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
 
 // Maximum GLPI version, exclusive
-define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.99');
+define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.9');
 
 if (!defined("PLUGIN_RACKSDIRECTIONS_DIR")) {
     define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("racksdirections"));
@@ -98,8 +98,8 @@ function plugin_racksdirections_check_config() {
 function plugin_racksdirections_check_prerequisites() {
  
     // Check that the GLPI version is compatible:
-    if (version_compare(GLPI_VERSION, '10.0.0', 'lt') || version_compare(GLPI_VERSION, '10.0.7', 'gt')) {
-        echo __('This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8', 'racksdirections');
+    if (version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MIN_GLPI, 'lt') || version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'gt')) {
+        echo __('This plugin requires GLPI >= '.PLUGIN_RACKSDIRECTIONS_MIN_GLPI.' and GLPI < '.PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'racksdirections');
         return false;
     }
  
