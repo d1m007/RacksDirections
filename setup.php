@@ -24,7 +24,7 @@
  * -------------------------------------------------------------------------
  * @copyright Copyright (C) 2023 by Dimitri Mestdagh.
  * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/dim00z/racksdirections
+ * @link      https://github.com/dim00z/RacksDirections
  * -------------------------------------------------------------------------
  */
 
@@ -39,20 +39,20 @@ define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
 define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.10');
 
 if (!defined("PLUGIN_RACKSDIRECTIONS_DIR")) {
-    define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("racksdirections"));
+    define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("RacksDirections"));
 }
 
 /**
  * Get the name and the version of the plugin - REQUIRED
  */
 function plugin_version_RacksDirections() {
-	//echo("<script>alert('GLPI_VER : ".(GLPI_VERSION+001)."');</script>");
+	
 	return [
 		'name'           => __("Racks Directions", "RacksDirections"),
 		'version'        => PLUGIN_RACKSDIRECTIONS_VERSION,
 		'author'         => 'Dimitri Mestdagh',
 		'license'        => 'GPLv3.0',
-		'homepage'       => 'https://github.com/dim00z/racksdirections',
+		'homepage'       => 'https://github.com/dim00z/RacksDirections',
 		'requirements'   => [
 			'glpi' => [
 				'min' => PLUGIN_RACKSDIRECTIONS_MIN_GLPI,
