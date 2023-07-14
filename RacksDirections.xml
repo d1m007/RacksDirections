@@ -31,8 +31,16 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
    <versions>
       <version>
          <num>0.0.3</num>
-         <compatibility>10.0.0</compatibility>
          <compatibility>10.0.9</compatibility>
+         <compatibility>10.0.8</compatibility>
+         <compatibility>10.0.7</compatibility>
+         <compatibility>10.0.6</compatibility>
+         <compatibility>10.0.5</compatibility>
+         <compatibility>10.0.4</compatibility>
+         <compatibility>10.0.3</compatibility>
+         <compatibility>10.0.2</compatibility>
+         <compatibility>10.0.1</compatibility>
+         <compatibility>10.0.0</compatibility>
          <download_url>https://github.com/dim00z/RacksDirections/raw/main/misc/RacksDirections.zip</download_url>
       </version>
    </versions>
