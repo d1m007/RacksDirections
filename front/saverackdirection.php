@@ -33,7 +33,7 @@ include('../../../inc/includes.php');
 // Check if user's profile has write access to this plugin:
 $rd = new PluginRacksDirections;
 $profile_right = $rd->getPluginProfile($_SESSION['glpiactiveprofile']['id']);
-if($profile_right != 1) Html::displayErrorAndDie(__("You don't have permission to perform this action.", 'racksdirections'));
+if($profile_right != 1) Html::displayErrorAndDie(__("You don't have permission to perform this action.", 'RacksDirections'));
 
 /**
  * Save rack direction parameter in DB according to user's choice:
@@ -42,7 +42,7 @@ if ($_POST && isset($_POST['save']) && isset($_POST['rack_id'])) {
 	
 	// Check that a rack direction has been passed:
     if (!isset($_POST['rackdirection']) || ($_POST['rackdirection']!=0 && $_POST['rackdirection']!=1)) {
-        Html::displayErrorAndDie(__('Please specify the slots numbering direction for the rack.', 'racksdirections'));
+        Html::displayErrorAndDie(__('Please specify the slots numbering direction for the rack.', 'RacksDirections'));
     }
 
 	$rack_id = (int)$_POST['rack_id'];				// for security purposes

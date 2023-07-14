@@ -34,21 +34,21 @@ include ("../../../inc/includes.php");
 Session::checkRight("config", UPDATE);
 
 // To be available when plugin in not activated:
-Plugin::load('racksdirections');
+Plugin::load('RacksDirections');
 
-Html::header(__('Plugin Racks Directions - Profiles configuration', 'racksdirections'), $_SERVER['PHP_SELF'], "config", "plugins");
+Html::header(__('Plugin Racks Directions - Profiles configuration', 'RacksDirections'), $_SERVER['PHP_SELF'], "config", "plugins");
 
 // Get available profiles in GLPI config :
 $rd = new PluginRacksDirections;
 $glpi_profiles = $rd->getGlpiProfiles();
 
 $out  = ("\n<div class=\"tab-content p-2 flex-grow-1 card border-start-0\" style=\"min-height: 150px\">");
-$out .= ("<table>\n<tbody>\n");
+$out .= ("<table style=\"width:600px\">\n<tbody>\n");
 $out .= ("<form action='./saveconfig.php' method='post'>\n");
 $out .= ("	" . Html::hidden('_glpi_csrf_token', array('value' => Session::getNewCSRFToken())));
 $out .= ("\n");
-$out .= ("	<tr><th colspan=\"2\" style=\"font-size:16px; padding-bottom:10px\">" . __("Plugin Racks Directions - Profiles configuration", 'racksdirections') . "</th></tr>\n");
-$out .= ("	<tr><td style=\"padding:20px;\">" . __("Select which profile can access the plugin tab to change racks directions", 'racksdirections') . ":</td></tr>\n");
+$out .= ("	<tr><th colspan=\"2\" style=\"font-size:16px; padding-bottom:10px\">" . __("Plugin Racks Directions - Profiles configuration", 'RacksDirections') . "</th></tr>\n");
+$out .= ("	<tr><td style=\"padding:20px;\">" . __("Select which profile can access the plugin tab to change racks directions", 'RacksDirections') . ":</td></tr>\n");
 
 foreach($glpi_profiles as $profile) {
 	
@@ -59,17 +59,17 @@ foreach($glpi_profiles as $profile) {
 	$out .= ("			<select name=\"profile_right_" . $profile['id'] . "\" id=\"profile_right_" . $profile['id'] . "\">\n");
 	$out .= ("				<option value=\"0\"");
 	if($profile_right == 1) $out .= (" selected");	
-	$out .= (">" . __('No access', 'racksdirections') . "</option>\n");
+	$out .= (">" . __('No access', 'RacksDirections') . "</option>\n");
 	$out .= ("				<option value=\"1\"");
 	if($profile_right == 1) $out .= (" selected");	
-	$out .= (">" . __('Write', 'racksdirections') . "</option>\n");
+	$out .= (">" . __('Write', 'RacksDirections') . "</option>\n");
 	$out .= ("			</select>\n");
 	$out .= ("		</td>\n");
 	$out .= ("	</tr>\n");
 	
 }
 
-$out .= ("	<tr><td colspan=\"2\" style=\"padding-top: 10px; text-align:center\"><input type=\"submit\" class=\"submit\" value=\"" . __('Save', 'racksdirections') . "\" name=\"save\"/></td>\n");
+$out .= ("	<tr><td colspan=\"2\" style=\"padding-top: 10px; text-align:center\"><input type=\"submit\" class=\"submit\" value=\"" . __('Save', 'RacksDirections') . "\" name=\"save\"/></td>\n");
 $out .= ("</form>\n</tbody>\n</table>\n</div>\n");
 
 echo($out);
