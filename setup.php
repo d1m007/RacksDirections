@@ -36,42 +36,19 @@ define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.3');
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
 
 // Maximum GLPI version, exclusive
-define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.9');
+define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.10');
 
 if (!defined("PLUGIN_RACKSDIRECTIONS_DIR")) {
     define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("racksdirections"));
-}
-if (!defined("PLUGIN_RACKSDIRECTIONS_WEB_DIR")) {
-    define("PLUGIN_RACKSDIRECTIONS_WEB_DIR", Plugin::getWebDir("racksdirections"));
-}
-
-if (!defined("PLUGIN_RACKSDIRECTIONS_DOC_DIR")) {
-    define("PLUGIN_RACKSDIRECTIONS_DOC_DIR", GLPI_PLUGIN_DOC_DIR . "/racksdirections");
-}
-if (!file_exists(PLUGIN_RACKSDIRECTIONS_DOC_DIR)) {
-    mkdir(PLUGIN_RACKSDIRECTIONS_DOC_DIR);
-}
-
-if (!defined("PLUGIN_RACKSDIRECTIONS_CLASS_PATH")) {
-    define("PLUGIN_RACKSDIRECTIONS_CLASS_PATH", PLUGIN_RACKSDIRECTIONS_DIR . "/inc");
-}
-if (!file_exists(PLUGIN_RACKSDIRECTIONS_CLASS_PATH)) {
-    mkdir(PLUGIN_RACKSDIRECTIONS_CLASS_PATH);
-}
-
-if (!defined("PLUGIN_RACKSDIRECTIONS_FRONT_PATH")) {
-    define("PLUGIN_RACKSDIRECTIONS_FRONT_PATH", PLUGIN_RACKSDIRECTIONS_DIR . "/front");
-}
-if (!file_exists(PLUGIN_RACKSDIRECTIONS_FRONT_PATH)) {
-    mkdir(PLUGIN_RACKSDIRECTIONS_FRONT_PATH);
 }
 
 /**
  * Get the name and the version of the plugin - REQUIRED
  */
-function plugin_version_racksdirections() {
+function plugin_version_RacksDirections() {
+	//echo("<script>alert('GLPI_VER : ".(GLPI_VERSION+001)."');</script>");
 	return [
-		'name'           => __("Racks Directions", "racksdirections"),
+		'name'           => __("Racks Directions", "RacksDirections"),
 		'version'        => PLUGIN_RACKSDIRECTIONS_VERSION,
 		'author'         => 'Dimitri Mestdagh',
 		'license'        => 'GPLv3.0',
@@ -88,18 +65,19 @@ function plugin_version_racksdirections() {
 /**
  *  Check if the config is ok - REQUIRED
  */
-function plugin_racksdirections_check_config() {
+function plugin_RacksDirections_check_config() {
+	
     return true;
 }
 
 /**
  * Check if the prerequisites of the plugin are satisfied - REQUIRED
  */
-function plugin_racksdirections_check_prerequisites() {
+function plugin_RacksDirections_check_prerequisites() {
  
     // Check that the GLPI version is compatible:
     if (version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MIN_GLPI, 'lt') || version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'gt')) {
-        echo __('This plugin requires GLPI >= '.PLUGIN_RACKSDIRECTIONS_MIN_GLPI.' and GLPI < '.PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'racksdirections');
+        echo __('This plugin requires GLPI >= '.PLUGIN_RACKSDIRECTIONS_MIN_GLPI.' and GLPI < '.PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'RacksDirections');
         return false;
     }
  
@@ -112,21 +90,21 @@ function plugin_racksdirections_check_prerequisites() {
  *
  * @return void
  */
-function plugin_init_racksdirections() {
+function plugin_init_RacksDirections() {
    
 	global $PLUGIN_HOOKS,$CFG_GLPI;
 	
-	$PLUGIN_HOOKS[Hooks::CSRF_COMPLIANT]['racksdirections'] = true;
+	$PLUGIN_HOOKS[Hooks::CSRF_COMPLIANT]['RacksDirections'] = true;
 	
     // Load plugin custom class:
-	include_once(PLUGIN_RACKSDIRECTIONS_DIR . "/inc/racksdirections.class.php");
+	include_once(PLUGIN_RACKSDIRECTIONS_DIR . "/inc/RacksDirections.class.php");
 	
 	// Add tab on rack admin page:
 	Plugin::registerClass('PluginRacksDirections', array('addtabon' => array('Rack')));
 	
 	// Add plugin config page:
 	if (Session::haveRight('config', UPDATE)) {
-		$PLUGIN_HOOKS['config_page']['racksdirections'] = 'front/config.form.php';
+		$PLUGIN_HOOKS['config_page']['RacksDirections'] = 'front/config.form.php';
 	}
 
 	return;

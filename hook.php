@@ -31,7 +31,7 @@
 /**
  * Called when user clicks on Install - REQUIRED
  */
-function plugin_racksdirections_install() {
+function plugin_RacksDirections_install() {
 	
 	// Create database table:
 	$rd = new PluginRacksDirections;
@@ -53,7 +53,7 @@ function plugin_racksdirections_install() {
 /**
  * Called when user click on Uninstall - REQUIRED
  */
-function plugin_racksdirections_uninstall() { 
+function plugin_RacksDirections_uninstall() { 
 
 	// Drop database table:
 	$rd = new PluginRacksDirections;
@@ -78,7 +78,7 @@ function plugin_racksdirections_uninstall() {
 /**
  * Called when plugin is init - REQUIRED
  */
-function plugin_racksdirections_postinit() {
+function plugin_RacksDirections_postinit() {
 	
 	// set default SESSION parameter:
 	$_SESSION['glpi_js_toload']['rack'][] = 'js/rack.js';	
