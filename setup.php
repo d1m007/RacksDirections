@@ -30,7 +30,7 @@
 
 use Glpi\Plugin\Hooks;
 
-define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.3');
+define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.4');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
@@ -77,7 +77,7 @@ function plugin_RacksDirections_check_prerequisites() {
  
     // Check that the GLPI version is compatible:
     if (version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MIN_GLPI, 'lt') || version_compare(GLPI_VERSION, PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'gt')) {
-        echo __('This plugin requires GLPI >= '.PLUGIN_RACKSDIRECTIONS_MIN_GLPI.' and GLPI < '.PLUGIN_RACKSDIRECTIONS_MAX_GLPI, 'RacksDirections');
+        echo __('This plugin requires GLPI', 'RacksDirections') . ' >= ' . PLUGIN_RACKSDIRECTIONS_MIN_GLPI . ' ' .__('and GLPI', 'RacksDirections') . ' < ' . PLUGIN_RACKSDIRECTIONS_MAX_GLPI;
         return false;
     }
  

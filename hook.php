@@ -35,10 +35,10 @@ function plugin_RacksDirections_install() {
 	
 	// Create database table:
 	$rd = new PluginRacksDirections;
-    $rd->createPluginDB();
+    $rd->installPluginDB();
 	
 	// Backup original GLPI '/src/Item_Rack.php' file:
-	rename(GLPI_ROOT . '/src/Item_Rack.php', GLPI_ROOT . '/src/Item_Rack.bak.php');
+	// rename(GLPI_ROOT . '/src/Item_Rack.php', GLPI_ROOT . '/src/Item_Rack.bak.php');
 	
 	// Replace original GLPI '/src/Item_Rack.php' file with custom file from plugin:
 	copy(PLUGIN_RACKSDIRECTIONS_DIR . '/files/src/Item_Rack.reverse.php', GLPI_ROOT . '/src/Item_Rack.php');
@@ -55,18 +55,21 @@ function plugin_RacksDirections_install() {
  */
 function plugin_RacksDirections_uninstall() { 
 
-	// Drop database table:
+	// If the 'Preserve plugin database' checkbos is not checked:
 	$rd = new PluginRacksDirections;
-    $rd->dropPluginDB();
+	if(!$rd->getPluginSetting('preservePluginDB')) $rd->dropPluginDB();
 	
 	// Reset modified SESSION parameter:
 	$_SESSION['glpi_js_toload']['rack'][] = 'js/rack.js';
 	
 	// Delete custom '/src/Item_Rack.php' file:
 	unlink(GLPI_ROOT . '/src/Item_Rack.php');
-	
-	// Restore original GLPI '/src/Item_Rack.php' file from backup:
-	rename(GLPI_ROOT . '/src/Item_Rack.bak.php', GLPI_ROOT . '/src/Item_Rack.php');
+	if (file_exists(GLPI_ROOT . '/src/Item_Rack.bak.php')) {
+		unlink(GLPI_ROOT . '/src/Item_Rack.bak.php');
+	}
+
+	// Restore original GLPI '/src/Item_Rack.php' file with last version:
+	copy(PLUGIN_RACKSDIRECTIONS_DIR . '/files/src/Item_Rack_v10.0.9.php', GLPI_ROOT . '/src/Item_Rack.php');
 	
 	// Delete custom file '/js/rack.reverse.js' dir:
 	unlink(GLPI_ROOT . '/js/rack.reverse.js');
