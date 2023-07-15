@@ -24,7 +24,7 @@
  * -------------------------------------------------------------------------
  * @copyright Copyright (C) 2023 by Dimitri Mestdagh.
  * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/dim00z/racksdirections
+ * @link      https://github.com/dim00z/RacksDirections
  * -------------------------------------------------------------------------
  */
 
@@ -32,7 +32,7 @@ include('../../../inc/includes.php');
 
 // Check if user's profile has write access to this plugin:
 $rd = new PluginRacksDirections;
-$profile_right = $rd->getPluginProfile($_SESSION['glpiactiveprofile']['id']);
+$profile_right = $rd->getPluginSetting('profile_right_'.$_SESSION['glpiactiveprofile']['id']);
 if($profile_right != 1) Html::displayErrorAndDie(__("You don't have permission to perform this action.", 'RacksDirections'));
 
 /**

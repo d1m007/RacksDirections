@@ -24,7 +24,7 @@
  * -------------------------------------------------------------------------
  * @copyright Copyright (C) 2023 by Dimitri Mestdagh.
  * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/dim00z/racksdirections
+ * @link      https://github.com/dim00z/RacksDirections
  * -------------------------------------------------------------------------
  */
 
@@ -34,9 +34,9 @@ include('../../../inc/includes.php');
 Session::checkRight("config", UPDATE);
 
 /**
- * Save users profiles rights in GLPI database
+ * Save plugin configuration in GLPI database
  */
-if ($_POST && isset($_POST['save'])) {
+if ($_POST) {
 	
 	$rd = new PluginRacksDirections;
 	
@@ -44,13 +44,15 @@ if ($_POST && isset($_POST['save'])) {
 		
 		if(preg_match("/profile_right_/", $key)) {
 			
-			$profile_id = (int)preg_split("/profile_right_/", $key)[1];	// for security purposes
-			$val = (int)$val;											// for security purposes
-			$rd->savePluginProfile($profile_id, $val);
+			$val = (int)$val;	// for security purposes
+			$rd->savePluginSetting($key, $val);
 			
 		}
 		
 	}
+	
+	if ($_POST['preservePluginDB']) $rd->savePluginSetting('preservePluginDB', 1);
+	else $rd->savePluginSetting('preservePluginDB', 0);
 
 	// Redirect the user to previous page:
     Html::back();
