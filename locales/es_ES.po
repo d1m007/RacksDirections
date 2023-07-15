@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GLPI Plugin - RacksDirections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-30 17:47+0000\n"
-"PO-Revision-Date: 2023-05-02 21:24+0000\n"
+"POT-Creation-Date: 2023-07-15 20:30+0000\n"
+"PO-Revision-Date: 2023-07-15 20:30+0000\n"
 "Last-Translator: Dimitri Mestdagh, 2023\n"
 "Language-Team: French (France)\n"
 "MIME-Version: 1.0\n"
@@ -43,13 +43,29 @@ msgstr "Sin acceso"
 msgid "Write"
 msgstr "Escritura"
 
-#: setup.php:102
-msgid "This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8"
-msgstr "Este plugin requiere GLPI >= 10.0.0 y GLPI < 10.0.8"
+#: front/config.form.php:72
+msgid "At plugin uninstall"
+msgstr "Al desinstalar el plugin "
+
+#: front/config.form.php:77
+msgid "Preserve plugin database in GLPI"
+msgstr "Preservar la base de datos del plugin en GLPI"
+
+#: front/config.form.php:78
+msgid "Recommended in case of upgrade"
+msgstr "Recomendado en caso de actualización"
 
 #: setup.php:74
 msgid "Racks Directions"
 msgstr "Direcciones de los bastidores"
+
+#: setup.php:80
+msgid "This plugin requires GLPI"
+msgstr "Este complemento requiere GLPI"
+
+#: setup.php:80
+msgid "and GLPI"
+msgstr "y GLPI"
 
 #: inc/racksdirections.class.php:94
 msgid "Rack direction"
@@ -63,34 +79,14 @@ msgstr "Cambiar la dirección de numeración de las ranuras en la vista del bast
 msgid "Direction to apply to this rack"
 msgstr "Dirección a aplicar a esta bastidor"
 
-#: inc/racksdirections.class.php:123
+#: inc/rackdirection.class.php:123
 msgid "Default"
-msgstr "Predeterminada"
+msgstr "de abajo arriba"
 
-#: inc/racksdirections.class.php:126
+#: inc/rackdirection.class.php:126
 msgid "Reversed"
-msgstr "Invertida"
+msgstr "de arriba abajo"
 
 #: inc/racksdirections.class.php:128
 msgid "Save"
 msgstr "Guardar"
-
-#: inc/racksdirections.class.php:132
-msgid "Information"
-msgstr "Información"
-
-#: inc/racksdirections.class.php:133
-msgid "Default numbering"
-msgstr "Numeración predeterminada"
-
-#: inc/racksdirections.class.php:133
-msgid "slots in this rack are numbered from bottom to top"
-msgstr "las ranuras de esta bastidor están numeradas de abajo a arriba"
-
-#: inc/racksdirections.class.php:134
-msgid "Reversed numbering"
-msgstr "Numeración invertida"
-
-#: inc/racksdirections.class.php:134
-msgid "slots in this rack are numbered from top to bottom"
-msgstr "las ranuras de esta bastidor están numeradas de arriba a abajo"

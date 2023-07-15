@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GLPI Plugin - RacksDirections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-30 17:47+0000\n"
-"PO-Revision-Date: 2023-05-02 21:24+0000\n"
+"POT-Creation-Date: 2023-07-15 20:30+0000\n"
+"PO-Revision-Date: 2023-07-15 20:30+0000\n"
 "Last-Translator: Dimitri Mestdagh, 2023\n"
 "Language-Team: French (France)\n"
 "MIME-Version: 1.0\n"
@@ -43,13 +43,29 @@ msgstr "No access"
 msgid "Write"
 msgstr "Write"
 
-#: setup.php:102
-msgid "This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8"
-msgstr "This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8"
+#: front/config.form.php:72
+msgid "At plugin uninstall"
+msgstr "At plugin uninstall"
 
-#: setup.php:74
+#: front/config.form.php:77
+msgid "Preserve plugin database in GLPI"
+msgstr "Preserve plugin database in GLPI"
+
+#: front/config.form.php:78
+msgid "Recommended in case of upgrade"
+msgstr "Recommended in case of upgrade"
+
+#: setup.php:51
 msgid "Racks Directions"
 msgstr "Racks Directions"
+
+#: setup.php:80
+msgid "This plugin requires GLPI"
+msgstr "This plugin requires GLPI"
+
+#: setup.php:80
+msgid "and GLPI"
+msgstr "and GLPI"
 
 #: inc/racksdirections.class.php:94
 msgid "Rack direction"
@@ -61,36 +77,16 @@ msgstr "Change slots numbering direction in rack view"
 
 #: inc/racksdirections.class.php:119
 msgid "Direction to apply to this rack"
-msgstr "Direction to apply to this rack"
+msgstr "Slots in this rack are numbered"
 
 #: inc/racksdirections.class.php:123
 msgid "Default"
-msgstr "Default"
+msgstr "from bottom to top"
 
 #: inc/racksdirections.class.php:126
 msgid "Reversed"
-msgstr "Reversed"
+msgstr "from top to bottom"
 
 #: inc/racksdirections.class.php:128
 msgid "Save"
 msgstr "Save"
-
-#: inc/racksdirections.class.php:132
-msgid "Information"
-msgstr "Information"
-
-#: inc/racksdirections.class.php:133
-msgid "Default numbering"
-msgstr "Default numbering"
-
-#: inc/racksdirections.class.php:133
-msgid "slots in this rack are numbered from bottom to top"
-msgstr "slots in this rack are numbered from bottom to top"
-
-#: inc/racksdirections.class.php:134
-msgid "Reversed numbering"
-msgstr "Reversed numbering"
-
-#: inc/racksdirections.class.php:134
-msgid "slots in this rack are numbered from top to bottom"
-msgstr "slots in this rack are numbered from top to bottom"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GLPI Plugin - RacksDirections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-30 17:47+0000\n"
-"PO-Revision-Date: 2023-05-02 21:24+0000\n"
+"POT-Creation-Date: 2023-07-15 20:30+0000\n"
+"PO-Revision-Date: 2023-07-15 20:30+0000\n"
 "Last-Translator: Dimitri Mestdagh, 2023\n"
 "Language-Team: French (France)\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgid "Please specify the slots numbering direction for the rack."
 msgstr "Veuillez indiquer un sens de numérotation pour la baie."
 
 #: front/config.form.php:50
-msgid "Plugin Racks Directions - Profiles configuration"
-msgstr "Plugin Sens des baies - Configuration des profils d'accès"
+msgid "Plugin Racks Directions - Configuration"
+msgstr "Plugin Sens des baies - Configuration"
 
 #: front/config.form.php:51
 msgid "Select which profile can access the plugin tab to change racks directions"
@@ -43,13 +43,29 @@ msgstr "Pas d'accès"
 msgid "Write"
 msgstr "Écriture"
 
-#: setup.php:102
-msgid "This plugin requires GLPI >= 10.0.0 and GLPI < 10.0.8"
-msgstr "Ce plugin nécessite une version de GLPI >= 10.0.0 et GLPI < 10.0.8"
+#: front/config.form.php:72
+msgid "At plugin uninstall"
+msgstr "A la désinstallation du plugin "
+
+#: front/config.form.php:77
+msgid "Preserve plugin database in GLPI"
+msgstr "Préserver la base de données du plugin dans GLPI "
+
+#: front/config.form.php:78
+msgid "Recommended in case of upgrade"
+msgstr "Recommandé en cas de mise à jour"
 
 #: setup.php:74
 msgid "Racks Directions"
 msgstr "Sens des baies"
+
+#: setup.php:80
+msgid "This plugin requires GLPI"
+msgstr "Ce plugin nécessite GLPI"
+
+#: setup.php:80
+msgid "and GLPI"
+msgstr "et GLPI"
 
 #: inc/rackdirection.class.php:94
 msgid "Rack direction"
@@ -61,36 +77,16 @@ msgstr "Changer le sens de numérotation des slots dans la vue de la baie"
 
 #: inc/rackdirection.class.php:119
 msgid "Direction to apply to this rack"
-msgstr "Sens à appliquer pour cette baie "
+msgstr "Cette baie est numérotée "
 
 #: inc/rackdirection.class.php:123
 msgid "Default"
-msgstr "Par défaut"
+msgstr "du bas vers le haut"
 
 #: inc/rackdirection.class.php:126
 msgid "Reversed"
-msgstr "Inversé"
+msgstr "du haut vers le bas"
 
 #: inc/rackdirection.class.php:128
 msgid "Save"
 msgstr "Sauvegarder"
-
-#: inc/rackdirection.class.php:132
-msgid "Information"
-msgstr "Information "
-
-#: inc/rackdirection.class.php:133
-msgid "Default numbering"
-msgstr "Numérotation par défaut "
-
-#: inc/rackdirection.class.php:133
-msgid "slots in this rack are numbered from bottom to top"
-msgstr "les emplacements dans cette baie sont numérotés de bas en haut"
-
-#: inc/rackdirection.class.php:134
-msgid "Reversed numbering"
-msgstr "Numérotation inversée "
-
-#: inc/rackdirection.class.php:134
-msgid "slots in this rack are numbered from top to bottom"
-msgstr "les emplacements dans cette baie sont numérotés de haut en bas"
