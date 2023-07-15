@@ -24,7 +24,7 @@
  * -------------------------------------------------------------------------
  * @copyright Copyright (C) 2023 by Dimitri Mestdagh.
  * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/dim00z/racksdirections
+ * @link      https://github.com/dim00z/RacksDirections
  * -------------------------------------------------------------------------
  */
 
@@ -39,19 +39,20 @@ class PluginRacksDirections extends CommonGLPI
 		$DB = new DB;
 		
 		// Table to store racks directions:
-		$table = "glpi_plugin_racksdirections_racksdirections";
-		$query = "CREATE TABLE `".$table."` (
+		$table = "glpi_plugin_racksdirections";
+		$query = "CREATE TABLE IF NOT EXISTS `".$table."` (
 			`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 			`rack_id` INT(10) UNSIGNED NOT NULL,
 			`is_reversed` INT(1) NOT NULL DEFAULT '0',
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
 		$result = $DB->query($query) or die($DB->error());
 		
-		// Table to store profiles rights on plugin:
-		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "CREATE TABLE `".$table."` (
-			`id` INT(10) UNSIGNED NOT NULL,
-			`profile_right` INT(1) UNSIGNED NOT NULL,
+		// Table to store plugin settings:
+		$table = "glpi_plugin_racksdirections_config";
+		$query = "CREATE TABLE IF NOT EXISTS `".$table."` (
+			`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+			`setting` VARCHAR(32),
+			`value` INT(1) UNSIGNED NOT NULL,
 			PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB;";
 		$result = $DB->query($query) or die($DB->error());
 		
@@ -60,7 +61,41 @@ class PluginRacksDirections extends CommonGLPI
 	}
 	
 	/**
-     * This function is called to drop the plugin table
+     * This function is called to install plugin configuration
+	 *  in the GLPI database
+     */
+	function installPluginDB(){
+		
+		$DB = new DB;
+
+		// If old plugin database exists:
+		$table = "glpi_plugin_racksdirections_racksdirections";
+		$query = "SHOW TABLES LIKE '".$table."';";
+		if(mysqli_num_rows($DB->query($query)) > 0) {
+			$query = "RENAME TABLE `".$table."` TO `glpi_plugin_racksdirections`;";
+			$result = $DB->query($query);
+		}
+		
+		self::createPluginDB();
+		
+		// If old plugin database exists:
+		$table = "glpi_plugin_racksdirections_profiles";
+		$query = "SHOW TABLES LIKE '".$table."';";
+		if(mysqli_num_rows($DB->query($query)) > 0) {
+			$query = "SELECT `id`,`profile_right` FROM `".$table."`;";
+			$result = $DB->query($query) or die($DB->error());
+			// Migrate data to new database:
+			foreach($result as $row) self::savePluginSetting('profile_right_' . $row['id'], $row['profile_right']);
+			// Drop old plugin database:
+			$query = "DROP TABLE `".$table."`;";
+			$result = $DB->query($query) or die($DB->error());
+		}
+
+	}
+		
+	
+	/**
+     * This function is called to drop the plugin tables
 	 *  from the GLPI database
      */
 	 function dropPluginDB(){
@@ -68,14 +103,14 @@ class PluginRacksDirections extends CommonGLPI
 		$DB = new DB;
 		
 		// Drop table of racks directions:
-		$table = "glpi_plugin_racksdirections_racksdirections";
-		$query = "DROP TABLE `".$table."`;";
-		$result = $DB->query($query) or die($DB->error());
+		$table = "glpi_plugin_racksdirections";
+		$query = "DROP TABLE IF EXISTS `".$table."`;";
+		$result = $DB->query($query);
 		
-		// Drop table of plugin profiles rights:
-		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "DROP TABLE `".$table."`;";
-		$result = $DB->query($query) or die($DB->error());
+		// Drop table of plugin settings:
+		$table = "glpi_plugin_racksdirections_config";
+		$query = "DROP TABLE IF EXISTS `".$table."`;";
+		$result = $DB->query($query);
 		
 		return;
 		
@@ -93,7 +128,7 @@ class PluginRacksDirections extends CommonGLPI
 				// Adjust rack direction in rack view according to info set in db:
 				self::checkRackDirection($item->getID());
 				// Display plugin tab according to active user profile:
-				$profile_access = self::getPluginProfile($_SESSION['glpiactiveprofile']['id']);
+				$profile_access = self::getPluginSetting('profile_right_'.$_SESSION['glpiactiveprofile']['id']);
 				if($profile_access == 1) return __('Rack direction', 'RacksDirections');
 				break;
 			default:
@@ -132,10 +167,7 @@ class PluginRacksDirections extends CommonGLPI
         $out .= "				</form>\n";
         $out .= "				</td>\n";
         $out .= "			</tr>\n";
-		$out .= "			<tr><td style=\"padding-top:30px\">" . __('Information', 'RacksDirections') . ":</td></tr>\n";
-		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Default numbering', 'RacksDirections') . ":</b> " . __('slots in this rack are numbered from bottom to top', 'RacksDirections') . "</td></tr>\n";
-		$out .= "			<tr><td style=\"padding-left:30px\"><b>" . __('Reversed numbering', 'RacksDirections') . ":</b> " . __('slots in this rack are numbered from top to bottom', 'RacksDirections') . "</td></tr>\n";
-        $out .= "		</tbody>\n";
+		$out .= "		</tbody>\n";
 		$out .= "		</table>\n";
 		$out .= "	</div>\n";
 		
@@ -148,25 +180,24 @@ class PluginRacksDirections extends CommonGLPI
      * This function is called to save profile access rights on
      *  the rackdirection plugin
      */
-	function savePluginProfile($profile_id, $profile_right){
+	function savePluginSetting($setting, $value){
 		
 		$DB = new DB;
 	
 		// Check if profile has already been set (at least once):
-		$profile_set = 0;
-		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "SELECT `profile_right` FROM `".$table."` WHERE `".$table."`.`id`=".$profile_id.";";
+		$table = "glpi_plugin_racksdirections_config";
+		$query = "SELECT `value` FROM `".$table."` WHERE `".$table."`.`setting`='".$setting."';";
 		$result = $DB->query($query) or die($DB->error());
 		
 		// Do we need to insert or update profile access right?
 		$profile_set = mysqli_num_rows($result);	
 		if($profile_set == 0){
 			// Insert profile access right information:
-			$query = "INSERT INTO `".$table."` (id, profile_right) VALUES (".$profile_id.", '".$profile_right."')";
+			$query = "INSERT INTO `".$table."` (`setting`, `value`) VALUES ('".$setting."', '".$value."')";
 		}
 		else{
 			// Update "glpi_rackdirections" table:
-			$query = "UPDATE `".$table."` SET `profile_right`='".$profile_right."' WHERE `".$table."`.`id`=".$profile_id.";";
+			$query = "UPDATE `".$table."` SET `value`='".$value."' WHERE `".$table."`.`setting`='".$setting."';";
 			
 		}
 		$result = $DB->query($query) or die($DB->error());
@@ -191,18 +222,24 @@ class PluginRacksDirections extends CommonGLPI
 	}
 	
 	/**
-     * This function is called to get the plugin profiles in DB
+     * This function is called to get the plugin settings in DB
      */
-	function getPluginProfile($profile_id){
+	function getPluginSetting($setting){
 		
 		// Get plugin information from DB:
 		$DB = new DB;		
-		$table = "glpi_plugin_racksdirections_profiles";
-		$query = "SELECT `id`,`profile_right` FROM `".$table."` WHERE `id`=".$profile_id.";";
-		$result = $DB->query($query) or die($DB->error());
-		$row = $result->fetch_assoc();
-		if(mysqli_num_rows($result) > 0) return ($row['profile_right']);
-		else return 0;
+		$table = "glpi_plugin_racksdirections_config";
+		$query = "SHOW TABLES LIKE '".$table."';";
+		if(mysqli_num_rows($DB->query($query)) > 0) {
+			$query = "SELECT `value` FROM `".$table."` WHERE `setting`='".$setting."';";
+			if(mysqli_num_rows($DB->query($query))){
+				$result = $DB->query($query);
+				$row = $result->fetch_assoc();
+				return ($row['value']);
+			}
+			else return 0;
+		}
+		else return 1;
 		
 	}
 	
@@ -216,7 +253,7 @@ class PluginRacksDirections extends CommonGLPI
 	
 		// Check if rack direction has already been set (at least once):
 		$direction_set = 0;
-		$table = "glpi_plugin_racksdirections_racksdirections";
+		$table = "glpi_plugin_racksdirections";
 		$query = "SELECT `id` FROM `".$table."` WHERE `".$table."`.`rack_id`=".$rack_id.";";
 		$result = $DB->query($query) or die($DB->error());
 		
@@ -245,7 +282,7 @@ class PluginRacksDirections extends CommonGLPI
 		
 		// Get rack direction information from DB:
 		$DB = new DB;		
-		$table = "glpi_plugin_racksdirections_racksdirections";
+		$table = "glpi_plugin_racksdirections";
 		$query = "SELECT `is_reversed` FROM `".$table."` WHERE `rack_id`='".$rack_id."';";
 		$result = $DB->query($query) or die($DB->error());
 		$row = $result->fetch_assoc();
@@ -267,7 +304,7 @@ class PluginRacksDirections extends CommonGLPI
 			$reversed_order = PluginRacksDirections::getRackDirection($rack_id);
 
 			// Set the SESSION parameter about javascript to load according to the rack direction:
-			if($reversed_order == 1) $_SESSION['glpi_js_toload']['rack'][] = 'js/rack.reverse.js';
+			if($reversed_order) $_SESSION['glpi_js_toload']['rack'][] = 'js/rack.reverse.js';
 			else $_SESSION['glpi_js_toload']['rack'][] = 'js/rack.js';
 			
 		}
