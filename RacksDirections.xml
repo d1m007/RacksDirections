@@ -62,6 +62,7 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
       </fr>
    </tags>
    <screenshots>
+      <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_config_page.png</screenshot>
       <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_tab.png</screenshot>
       <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_reversed_rack_view.png</screenshot>
    </screenshots>
