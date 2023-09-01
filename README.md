@@ -8,6 +8,7 @@ This plugin is intended to reverse slots numbering direction in racks views, if 
 
 ## Screenshots
 
+![Screenshot](./misc/RacksDirections_config_page.png)
 ![Screenshot](./misc/RacksDirections_tab.png)
 ![Screenshot](./misc/RacksDirections_reversed_rack_view.png)
 
