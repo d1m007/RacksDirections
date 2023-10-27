@@ -30,13 +30,13 @@
 
 use Glpi\Plugin\Hooks;
 
-define('PLUGIN_RACKSDIRECTIONS_VERSION', '0.0.5');
+define('PLUGIN_RACKSDIRECTIONS_VERSION', '1.0.0');
 
 // Minimal GLPI version, inclusive
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
 
 // Maximum GLPI version, exclusive
-define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.10');
+define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.11');
 
 if (!defined("PLUGIN_RACKSDIRECTIONS_DIR")) {
     define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("RacksDirections"));
