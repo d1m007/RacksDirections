@@ -308,7 +308,7 @@ class PluginRacksDirections extends CommonGLPI
 			else $_SESSION['glpi_js_toload']['rack'][0] = 'js/rack.js';
 
 			$_SESSION['reversed_slots_order'] = $reversed_slots_order;  // used to set current state in selectbox
-																		// in plugin tab once page is loaded
+										    // in plugin tab once page is loaded
 			
 		}
 		
