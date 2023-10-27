@@ -157,10 +157,10 @@ class PluginRacksDirections extends CommonGLPI
 		$out .= "					<label for=\"rackdirection\">" . __('Direction to apply to this rack', 'RacksDirections') . ":</label>\n";
         $out .= "					<select name=\"rackdirection\" id=\"rackdirection\">\n";
 		$out .= "						<option value=\"0\"";
-		if(isset($_SESSION['glpi_js_toload']['rack']) && $_SESSION['glpi_js_toload']['rack'][0] == 'js/rack.js') $out .= (" selected");
+		if(isset($_SESSION['reversed_slots_order']) && $_SESSION['reversed_slots_order'] == '0') $out .= (" selected");
 		$out .= ">" . __('Default', 'RacksDirections') . "</option>\n";
 		$out .= "						<option value=\"1\"";
-		if(isset($_SESSION['glpi_js_toload']['rack']) && $_SESSION['glpi_js_toload']['rack'][0] == 'js/rack.reverse.js') $out .= (" selected");
+		if(isset($_SESSION['reversed_slots_order']) && $_SESSION['reversed_slots_order'] == '1') $out .= (" selected");
 		$out .= ">" . __('Reversed', 'RacksDirections') . "</option>\n";
 		$out .= "					</select>\n";
 		$out .= "					<input type=\"submit\" class=\"submit\" value=\"" . __('Save', 'RacksDirections') . "\" name=\"save\"/>\n";
@@ -301,11 +301,14 @@ class PluginRacksDirections extends CommonGLPI
 		if(isset($rack_id) && !empty($rack_id)){	
 			
 			// Check slot numbering direction for given rack:
-			$reversed_order = PluginRacksDirections::getRackDirection($rack_id);
+			$reversed_slots_order = PluginRacksDirections::getRackDirection($rack_id);
 
 			// Set the SESSION parameter about javascript to load according to the rack direction:
-			if($reversed_order) $_SESSION['glpi_js_toload']['rack'][] = 'js/rack.reverse.js';
-			else $_SESSION['glpi_js_toload']['rack'][] = 'js/rack.js';
+			if($reversed_slots_order) $_SESSION['glpi_js_toload']['rack'][0] = 'js/rack.reverse.js';
+			else $_SESSION['glpi_js_toload']['rack'][0] = 'js/rack.js';
+
+			$_SESSION['reversed_slots_order'] = $reversed_slots_order;  // used to set current state in selectbox
+																		// in plugin tab once page is loaded
 			
 		}
 		
