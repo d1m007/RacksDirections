@@ -2,7 +2,7 @@
    <name>RacksDirections</name>
    <key>RacksDirections</key>
    <state>stable</state>
-   <logo>https://raw.githubusercontent.com/dim00z/RacksDirections/main/RacksDirections.png</logo>
+   <logo>https://raw.githubusercontent.com/d1m007/RacksDirections/main/RacksDirections.png</logo>
    <description>
       <short>
          <en>The RacksDirections plugin allows you to reverse slots numbering in racks views.</en>
@@ -21,10 +21,10 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
          </fr>
       </long>
    </description>
-   <homepage>https://github.com/dim00z/RacksDirections</homepage>
-   <download>https://github.com/dim00z/RacksDirections/raw/main/misc/RacksDirections.zip</download>
-   <issues>https://github.com/dim00z/RacksDirections/issues</issues>
-   <readme>https://raw.githubusercontent.com/dim00z/RacksDirections/main/README.md</readme>
+   <homepage>https://github.com/d1m007/RacksDirections</homepage>
+   <download>https://github.com/d1m007/RacksDirections/raw/main/misc/RacksDirections.zip</download>
+   <issues>https://github.com/d1m007/RacksDirections/issues</issues>
+   <readme>https://raw.githubusercontent.com/d1m007/RacksDirections/main/README.md</readme>
    <authors>
       <author>Dimitri Mestdagh</author>
    </authors>
@@ -42,7 +42,7 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
          <compatibility>10.0.2</compatibility>
          <compatibility>10.0.1</compatibility>
          <compatibility>10.0.0</compatibility>
-         <download_url>https://github.com/dim00z/RacksDirections/raw/main/misc/RacksDirections.zip</download_url>
+         <download_url>https://github.com/d1m007/RacksDirections/raw/main/misc/RacksDirections.zip</download_url>
       </version>
    </versions>
    <langs>
@@ -63,8 +63,8 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
       </fr>
    </tags>
    <screenshots>
-      <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_config_page.png</screenshot>
-      <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_tab.png</screenshot>
-      <screenshot>https://raw.githubusercontent.com/dim00z/RacksDirections/main/misc/RacksDirections_reversed_rack_view.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/d1m007/RacksDirections/main/misc/RacksDirections_config_page.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/d1m007/RacksDirections/main/misc/RacksDirections_tab.png</screenshot>
+      <screenshot>https://raw.githubusercontent.com/d1m007/RacksDirections/main/misc/RacksDirections_reversed_rack_view.png</screenshot>
    </screenshots>
 </root>
