@@ -22,7 +22,7 @@
  * -------------------------------------------------------------------------
  * @copyright Copyright (C) 2023 by Dimitri Mestdagh.
  * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/d1m007/racksdirections
+ * @link      https://github.com/d1m007/RacksDirections
  * -------------------------------------------------------------------------
  */
 
