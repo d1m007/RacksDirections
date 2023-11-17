@@ -52,7 +52,7 @@ function plugin_version_RacksDirections() {
 		'version'        => PLUGIN_RACKSDIRECTIONS_VERSION,
 		'author'         => 'Dimitri Mestdagh',
 		'license'        => 'GPLv3.0',
-		'homepage'       => 'https://github.com/dim00z/RacksDirections',
+		'homepage'       => 'https://github.com/d1m007/RacksDirections',
 		'requirements'   => [
 			'glpi' => [
 				'min' => PLUGIN_RACKSDIRECTIONS_MIN_GLPI,
