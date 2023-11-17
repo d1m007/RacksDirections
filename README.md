@@ -1,6 +1,6 @@
 # GLPi RacksDirections Plugin
 
-Download the plugin here : https://github.com/dim00z/RacksDirections/raw/main/misc/RacksDirections.zip
+Download the plugin here : https://github.com/d1m007/RacksDirections/raw/main/misc/RacksDirections.zip
 
 ## Introduction
 
@@ -16,7 +16,7 @@ This plugin is intended to reverse slots numbering direction in racks views, if 
 
 ![license](./misc/GPLv3.0.svg)
 
-It is distributed under the GNU GENERAL PUBLIC LICENSE Version 3 - please consult the file called [LICENSE](https://raw.githubusercontent.com/dim00z/RacksDirections/main/LICENSE) for more details.
+It is distributed under the GNU GENERAL PUBLIC LICENSE Version 3 - please consult the file called [LICENSE](https://raw.githubusercontent.com/d1m007/RacksDirections/main/LICENSE) for more details.
 
 ## Documentation
 
@@ -47,5 +47,5 @@ Or use git:
 
 ```sh
 cd /my/glpi/deployment/main/directory/plugins
-git clone https://github.com/dim00z/RacksDirections.git
+git clone https://github.com/d1m007/RacksDirections.git
 ```
