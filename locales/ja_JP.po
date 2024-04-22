@@ -1,0 +1,111 @@
+# en_GB translations for the RacksDirections plugin.
+# Copyright (C) 2023 Dimitri Mestdagh
+# This file is distributed under the same license as the RacksDirections plugin.
+#
+# Translator:
+# INOUE Daisuke, 2023
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Plugin - RacksDirections\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-15 20:30+0000\n"
+"PO-Revision-Date: 2024-04-13 10:57+0900\n"
+"Last-Translator: INOUE Daisuke, 2024\n"
+"Language-Team: Japanese (Japan)\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Language: ja_JP\n"
+"X-Source-Language: en_GB\n"
+"X-Generator: Poedit 3.4.2\n"
+
+# この操作を実行する権限がありません。
+#: front/saverackdirection.form.php:36
+msgid "You don't have permission to perform this action."
+msgstr "この操作を実行する権限がありません。"
+
+# ラックのスロット番号の並びの方向を指定してください。
+#: front/saverackdirection.form.php:45
+msgid "Please specify the slots numbering direction for the rack."
+msgstr "ラックのスロット番号の方向を指定してください。"
+
+# ラック番号の方向プラグイン――プロファイル設定
+#: front/config.form.php:50
+msgid "Plugin Racks Directions - Profiles configuration"
+msgstr "ラックの番号順プラグイン - プロファイルの設定"
+
+# ラック番号の方向プラグインのタブにアクセスできるプロファイルを選択
+#: front/config.form.php:51
+msgid "Select which profile can access the plugin tab to change racks directions"
+msgstr "プラグインのタブにアクセスしラックの方向を変更できるプロファイルを選択します"
+
+# アクセス権なし
+#: front/config.form.php:62
+msgid "No access"
+msgstr "アクセス不可"
+
+# 書き込み
+#: front/config.form.php:65
+msgid "Write"
+msgstr "変更可"
+
+# プラグインのアンインストール時
+#: front/config.form.php:72
+msgid "At plugin uninstall"
+msgstr "プラグインのアンインストール時"
+
+# GLPI にプラグインのデータベースを残す
+#: front/config.form.php:77
+msgid "Preserve plugin database in GLPI"
+msgstr "プラグインデータベースを GLPI に残す"
+
+# アップグレードの場合に推奨
+#: front/config.form.php:78
+msgid "Recommended in case of upgrade"
+msgstr "アップグレード時に推奨"
+
+# ラック番号の方向
+#: setup.php:51
+msgid "Racks Directions"
+msgstr "ラックの番号順"
+
+# このプラグインには GLPI が必要です
+#: setup.php:80
+msgid "This plugin requires GLPI"
+msgstr "このプラグインには GLPI が必要です"
+
+#: setup.php:80
+msgid "and GLPI"
+msgstr "and GLPI"
+
+# ラック番号の方向
+#: inc/racksdirections.class.php:94
+msgid "Rack direction"
+msgstr "ラックの番号順"
+
+# ラック画面のスロット番号の方向を変更します
+#: inc/racksdirections.class.php:111
+msgid "Change slots numbering direction in rack view"
+msgstr "ラック表示でのスロット番号の方向を変更します"
+
+# このラックに適用する方向
+#: inc/racksdirections.class.php:119
+msgid "Direction to apply to this rack"
+msgstr "このラックに適用する番号順は"
+
+# デフォルト
+#: inc/racksdirections.class.php:123
+msgid "Default"
+msgstr "下から上へ"
+
+# 逆順
+#: inc/racksdirections.class.php:126
+msgid "Reversed"
+msgstr "上から下へ"
+
+# 保存
+#: inc/racksdirections.class.php:128
+msgid "Save"
+msgstr "保存"
