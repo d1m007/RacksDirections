@@ -31,6 +31,14 @@ Le plugin "Sens des baies" permet de changer l'ordre de numérotation des emplac
    <versions>
       <version>
          <num>1.0.3</num>       
+         <compatibility>10.0.18</compatibility>
+         <compatibility>10.0.17</compatibility>
+         <compatibility>10.0.16</compatibility>
+         <compatibility>10.0.15</compatibility>
+         <compatibility>10.0.14</compatibility>
+         <compatibility>10.0.13</compatibility>
+         <compatibility>10.0.12</compatibility>
+         <compatibility>10.0.11</compatibility>
          <compatibility>10.0.10</compatibility>
          <compatibility>10.0.9</compatibility>
          <compatibility>10.0.8</compatibility>
