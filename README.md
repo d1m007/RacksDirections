@@ -25,7 +25,7 @@ It's useful when you have to manage various types of racks in your IT infrastruc
 This plugin allows you to modify the rack direction in GLPI to fit the real rack configuration.
 You also can select the profiles which are allowed to change the racks directions.
 
-This plugin is compatible with GLPI 10.0.0 => 10.0.11. Translations available in en_EN, fr_FR, es_ES. Up to you to add more.
+This plugin is compatible with GLPI 10.0.0 => 10.0.18. Translations available in en_EN, fr_FR, es_ES. Up to you to add more.
 
 This plugin needs to replace a GLPI core file ('/src/Item_Rack.php') with a custom one in order to work correctly.
 It also adds a custom javascript file ('/js/rack.reverse.js') to GLPI.
@@ -40,7 +40,7 @@ The original glpi file '/src/Item_Rack.php' is restored at the end of the uninst
 ## Installation
 
 To install the plugin, unzip the files in the following directory:
-'glpi/plugins/racksdirections/'
+'glpi/plugins/RacksDirections/'
 then install/enable it from the Setup/plugin panel. You need to configure profile rights in order to display the additionnal tab in racks views.
 
 Or use git:
