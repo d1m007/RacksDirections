@@ -36,7 +36,7 @@ define('PLUGIN_RACKSDIRECTIONS_VERSION', '1.0.3');
 define('PLUGIN_RACKSDIRECTIONS_MIN_GLPI', '10.0.0');
 
 // Maximum GLPI version, exclusive
-define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.18');
+define('PLUGIN_RACKSDIRECTIONS_MAX_GLPI', '10.0.19');
 
 if (!defined("PLUGIN_RACKSDIRECTIONS_DIR")) {
     define("PLUGIN_RACKSDIRECTIONS_DIR", Plugin::getPhpDir("RacksDirections"));
